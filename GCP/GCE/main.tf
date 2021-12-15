@@ -1,12 +1,12 @@
-resource "google_compute_instance" "vm-from-tf" {
-  name = "vm-from-tf"
-  zone = "asia-southeast1-a"
+resource "google_compute_instance" "wonders-prod-vm" {
+  name = "wonders-prod-vm"
+  zone = "us-central1-a"
   machine_type = "n1-standard-2"
 
   allow_stopping_for_update = true
 
   network_interface {
-    network = "custom-vpc-tf"
+    network = "wonders-prod"
     subnetwork = "sub-sg"
   }
 
@@ -20,7 +20,7 @@ resource "google_compute_instance" "vm-from-tf" {
   }
 
   labels = {
-    "env" = "tfleaning"
+    "env" = "prod"
   }
 
   
@@ -30,7 +30,7 @@ resource "google_compute_instance" "vm-from-tf" {
   }
   
   service_account {
-    email = "terraform-gcp@terraform-gcp-326702.iam.gserviceaccount.com"
+    email = "liontech-pros-dev@wonders-tech.iam.gserviceaccount.com"
     scopes = [ "cloud-platform" ]
   }
 
@@ -44,14 +44,14 @@ resource "google_compute_instance" "vm-from-tf" {
 
 resource "google_compute_disk" "disk-1" {
   name = "disk-1"
-  size = 15
+  size = 100
   zone = "asia-southeast1-a"
   type = "pd-ssd"
 }
 
-resource "google_compute_attached_disk" "adisk" {
+resource "google_compute_attached_disk" "disk" {
   disk = google_compute_disk.disk-1.id
-  instance = google_compute_instance.vm-from-tf.id
+  instance = google_compute_instance.wonders-prod-vm.id
 }
 
 
