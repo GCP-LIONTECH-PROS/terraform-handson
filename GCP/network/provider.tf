@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = "terraform-gcp-326702"
+  project = "wonders-tech"
   region = "us-central1"
   zone = "us-central1-a"
   credentials = "keys.json"
