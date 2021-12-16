@@ -1,0 +1,16 @@
+    1  clear 
+    2  ls /home/
+    3  sudo su - jbesona 
+    4  clear 
+    5  git clone  https://github.com/GCP-LIONTECH-PROS/terraform-handson.git
+    6  gcloud  config list 
+    7  gcloud  init 
+    8  gcloud  config list 
+    9  clear 
+   10  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+   11  LionTechPros@liontech-handsone-1:~/terraform-handson/GCP/Redis$ 
+   12  sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+   13  sudo apt install terraform
+   14  apt policy terraform
+   15  sudo apt install terraform=0.14.0
+   16  history  > history.yml

@@ -9,9 +9,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = "terraform-gcp-326702"
-  region = "us-central1"
-  zone = "us-central1-a"
+  project = "wonders-tech"
+  region = "northamerica-northeast2"
+  zone = "northamerica-northeast2-a"
   credentials = "keys.json"
 }
 

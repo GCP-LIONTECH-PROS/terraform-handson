@@ -1,5 +1,5 @@
-resource "google_compute_network" "auto-vpc-tf" {
-  name = "auto-vpc-tf"
+resource "google_compute_network" "dev-liontech" {
+  name = "dev-liontech"
   auto_create_subnetworks = true
 }
 
@@ -30,7 +30,7 @@ resource "google_compute_firewall" "allow-icmp" {
 
 
 output "auto" {
-  value = google_compute_network.auto-vpc-tf.id
+  value = google_compute_network.dev-liontech.id
 }
 
 output "custom" {
